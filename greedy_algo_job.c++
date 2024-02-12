@@ -60,17 +60,20 @@ void greedy_knapsack(float profit[],float weight[],int size){
     print(weight,size);
     cout<<endl;
     float m=20;
+    int count;
     float finalprofit=0;
     for(int i=size-1;i>=0;i--){
         if(m>0 && weight[i]<=m){
             m=m-weight[i];
             finalprofit=finalprofit+profit[i];
+            count=i;
         }
         else{
-            if(m>0){
-            finalprofit=finalprofit+((profit[i])*(m/weight[i]));
-            }
+            break;
         }
+    }
+    if(m>0){
+            finalprofit=finalprofit+((profit[count])*(m/weight[count]));
     }
     cout<<finalprofit;
 }
