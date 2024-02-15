@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    .container{
+        height: 50vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .box{
+        height: 30vh;
+        width: 50vw;
+        background-color: #F4F1BB;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 20px;
+    }
+    .ybox{
+        height: 3rem;
+        width: 10rem;
+        background-color: #ED6A5A;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: white;
+        border-radius: 20px;
+        transition: height 1s, width 1s;
+        cursor: pointer;
+        font-family: cursive;
+    }
+    .nbox{
+        height: 3rem;
+        width: 10rem;
+        background-color: #ED6A5A;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: white;
+        border-radius: 20px;
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0s, opacity 0.2s linear;
+        cursor: pointer;
+        font-family: cursive;
+    }
+    .nbox:hover{
+        visibility: none;
+        opacity: 0;
+    }
+    .ybox:hover{
+        height: 10rem;
+        width: 50rem; 
+        font-weight: bolder;
+        font-size: 30px;
+    }
+
+    .inp{
+        margin: 2rem;
+        color:#ED6A5A;
+        border-color: blue;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: cursive;
+    }
+
+    .inp button{
+        background-color: rgb(96, 221, 230);
+        border: none;
+        width: 80px;
+        height: 40px;
+        cursor: pointer;
+        font-family: cursive;
+    }
+
+    .holder{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        background-color: #ED6A5A;
+        border-radius: 30px;
+        height: 25vh;
+        margin: 2rem;
+        padding: 1rem;
+        color: white;
+        font-family: cursive;
+    }
+
+</style>
+<body>
+    <div class="holder">
+        <h1>Here is to anounce....</h1>
+        <p>In the due respect of chua gang, in the presence of billi gang OUR LEADER Miss. Ashmeet Kaur admitted that she has feelings for Abhaijeet Singh and here's a letter for the same, she said us to handover to you...</p>
+        <h3>Hanji taaaaa....</h3>
+    </div>
+    <div class="container">
+        <div class="box">
+            <div class="nbox">NOO</div>
+            <div class="ybox">YESSSSSS</div>
+        </div>
+    </div>
+    <div class="inp">
+        <h1>Tusi vi ta likho naaa.....</h1>
+    </div>
+</body>
+<script>
+    document.querySelector(".ybox").addEventListener("click",e=>{
+        document.querySelector(".box").innerHTML= document.querySelector(".box").innerHTML+`<div class="ybox">I LOVE YOU</div>
+        <div class="ybox">ABHAI JI</div>
+        `
+    })
+    document.querySelector(".ybox").addEventListener("click",e=>{
+        document.querySelector(".inp").innerHTML= document.querySelector(".inp").innerHTML+` <div class="inp"><input type="text" style="height:50px" placeholder="Ashmeet I love you"></div>
+        <button class="chuabutton">Submit to chua gang</button>`
+
+        document.querySelector(".chuabutton").addEventListener("click",e=>{
+           let audio= new Audio();
+           audio.src= "/whatve.mpeg";
+           audio.play()
+        })
+    })
+</script>
+</html>

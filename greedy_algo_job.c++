@@ -10,7 +10,7 @@ int partition(float a[],int p,int q,float profit[],float weight[]){
     float x=a[p];
     int i=p;
     for(int j=p+1;j<=q;j++){
-        if(a[j]<+x){
+        if(a[j]<=x){
             i++;
             swap(&a[i],&a[j]);
             swap(&profit[i],&profit[j]);
@@ -36,7 +36,7 @@ void print(float a[],int size){
         cout<<a[i]<<",";
     }
 }
-void greedy_knapsack(float profit[],float weight[],int size){
+float greedy_knapsack(float profit[],float weight[],int size){
     float ratio[100]={};
     for(int i=0;i<size;i++){
         ratio[i]=(profit[i]/weight[i]);
@@ -59,7 +59,7 @@ void greedy_knapsack(float profit[],float weight[],int size){
     cout<<endl<<"weight array:"<<endl;
     print(weight,size);
     cout<<endl;
-    float m=20;
+    int m=20;
     int count;
     float finalprofit=0;
     for(int i=size-1;i>=0;i--){
@@ -73,9 +73,9 @@ void greedy_knapsack(float profit[],float weight[],int size){
         }
     }
     if(m>0){
-            finalprofit=finalprofit+((profit[count])*(m/weight[count]));
+        finalprofit=float(finalprofit)+(float(profit[count])*float(m/weight[count]));
     }
-    cout<<finalprofit;
+    return finalprofit;
 }
 
 int main(){
@@ -91,6 +91,6 @@ int main(){
         cout<<"enter weight of object["<<i+1<<"]";
         cin>>weight[i];
     }
-    greedy_knapsack(profit,weight,size);
+    cout<<greedy_knapsack(profit,weight,size);
     return 0;
 }

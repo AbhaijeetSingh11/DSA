@@ -9,7 +9,7 @@ int partition(int a[],int p,int q){
     int x=a[p];
     int i=p;
     for(int j=p+1;j<=q;j++){
-        if(a[j]<+x){
+        if(a[j]<=x){
             i++;
             swap(&a[i],&a[j]);
         }
